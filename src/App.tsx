@@ -21,6 +21,10 @@ function App() {
     setCurrentPage('dashboard');
   };
 
+  const handleLogout = () => {
+    setCurrentPage('home');
+  };
+
   if (currentPage === 'login') {
     return <Login onLogin={handleLogin} />;
   }
@@ -30,7 +34,7 @@ function App() {
   }
 
   if (currentPage === 'dashboard') {
-    return <Dashboard />;
+    return <Dashboard onLogout={handleLogout} />;
   }
 
   return <Home onNavigate={handleNavigate} />;
